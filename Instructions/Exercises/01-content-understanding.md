@@ -64,9 +64,8 @@ Azure Content Understanding includes prebuilt **Read** and **Layout** analyzers 
 ### Use the Layout analyzer in the playground
 
 1. In the [Microsoft Foundry portal](https://ai.azure.com), make sure the **New Foundry** toggle is on.
-1. Select **Build** in the upper-right menu, then select **Deployments** in the left pane.
-1. Select the **AI Services** tab to view the prebuilt models provided by Foundry Tools.
-1. Find and select **Azure Content Understanding - Layout**.
+1. Select **Build** in the upper-right menu, then select **Services** in the left pane.
+1. Find and select **Content Understanding - Document Layout Analyzer**.
 
     This opens the Layout analyzer playground page, where you can test the layout model on sample data or your own files.
 
@@ -79,7 +78,7 @@ Azure Content Understanding includes prebuilt **Read** and **Layout** analyzers 
 
     > **Note**: The prebuilt **Read** and **Layout** analyzers extract content from documents without requiring a generative AI model. **Read** extracts text elements (words, paragraphs, formulas, and barcodes), while **Layout** additionally extracts tables, figures, document structure, hyperlinks, and annotations. These analyzers are useful for general-purpose content extraction, but they don't extract specific custom fields such as invoice amounts or vendor names.
 
-1. Optionally, go back to the **AI Services** tab and try **Azure Content Understanding - Read** with the same file to compare the results. Notice that Read extracts text without layout analysis.
+1. Optionally, go back to the **Services** tab and try **Content Understanding - OCR Read Analyzer** with the same file to compare the results. Notice that Read extracts text without layout analysis.
 
 ## Set up Content Understanding Studio for custom analyzers
 
@@ -87,7 +86,8 @@ To extract specific fields from your content (such as invoice amounts, caller na
 
 1. In a new browser tab, open [Content Understanding Studio](https://contentunderstanding.ai.azure.com) at `https://contentunderstanding.ai.azure.com`.
 1. If prompted, sign in with the same Azure credentials you used for the Foundry portal.
-1. On the **Settings** page (or if redirected to set up your resource), select the **+ Add resource** button.
+1. In the main page of **Content Understanding Studio**, choose **Get started with Content Understanding**
+1. Open the **Settings** page using the cogwheel in the top-right part of the page (or if redirected to set up your resource) and select the **+ Add resource** button.
 1. Select the Foundry resource you created earlier, and select **Next** > **Save**.
 
     > **Tip**: Make sure that the **Enable autodeployment for required models if no defaults are available** checkbox is selected. This ensures your resource is set up with the required `GPT-4.1`, `GPT-4.1-mini`, and `text-embedding-3-large` models that custom analyzers need.
@@ -108,7 +108,7 @@ Content Understanding Studio requires an Azure Blob Storage account to store the
     - **Resource group**: *The same resource group as your Foundry resource*
     - **Storage account name**: *Enter a globally unique name*
     - **Region**: *The same region as your Foundry resource*
-    - **Preferred storage type**: Azure Blob Storage or Azure Data Lake Storage Gen 2
+    - **Primary service**: Azure Blob Storage or Azure Data Lake Storage Gen 2
     - **Performance**: Standard
     - **Redundancy**: Locally-redundant storage (LRS)
 1. Select **Review + create**, and then **Create**. Wait for deployment to complete.
